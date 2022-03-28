@@ -7,6 +7,7 @@ import {
   prevPersonajesAccion,
   buscarPersonajesAccion,
   mostrarFavoritosAccion,
+  agregarFavoritosAccion,
 } from "../redux/personajesDucks";
 
 import "../style/coolstuf.scss";
@@ -17,6 +18,7 @@ const Personajes = () => {
   const navigate = useNavigate();
   //personajes
   const personajes = useSelector((store) => store.personajes.array);
+  console.log(personajes);
   const [nombres, setNombres] = useState("");
   const handleChange = (e) => {
     setNombres(e.target.value);
@@ -31,6 +33,9 @@ const Personajes = () => {
     navigate("/favoritos")
 
   };
+  const addFavoritos = (personaje) => {
+      dispatch(agregarFavoritosAccion(personaje))
+  }
   return (
     <div className="container page">
           <Barrita />
@@ -82,6 +87,7 @@ const Personajes = () => {
                 <p>Especie: {item.species}</p>
                 <p>Genero: {item.gender}</p>
                 <p>Ubicacion: {item.location.name}</p>
+                <button onClick={()=>addFavoritos(item)}>❤</button>
               </div>
             </div>
           </div>

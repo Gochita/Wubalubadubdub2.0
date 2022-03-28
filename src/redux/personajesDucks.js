@@ -4,6 +4,7 @@ import axios from "axios";
 const dataInicial = {
   array: [],
   page: 0,
+  favoritos: [],
 };
 
 const GET_PERSONAJES_SUCCESS = "GET_PERSONAJES_SUCCESS";
@@ -11,6 +12,7 @@ const NEXT_PERSONAJES_SUCCESS = "NEXT_PERSONAJES_SUCCESS";
 const PREV_PERSONAJES_SUCCESS = "PREV_PERSONAJES_SUCCESS";
 const BUSCAR_PERSONAJES_SUCCES = "BUSCAR_PERSONAJES_SUCCESS";
 const MOSTRAR_FAVORITOS_SUCCESS ="MOSTRAR_FAVORITOS_SUCCESS"
+const AGREGAR_FAVORITOS_SUCCES= "AGREGAR_FAVORITOS_SUCCESS";
 
 //reducer
 export default function personajesReducer(state = dataInicial, action) {
@@ -43,6 +45,15 @@ export default function personajesReducer(state = dataInicial, action) {
             array:action.payload.array,
             page:action.payload.page,
         }
+    case AGREGAR_FAVORITOS_SUCCES:
+         return{
+             ...state,
+             favoritos: [state.favoritos.push(action.payload.favorito)],
+         }
+       // console.log(action.payload.favorito)
+       console.log(state.favoritos)
+
+        // return state.favoritos.push(action.payload.favorito)
     default:
       return state;
   }
@@ -55,7 +66,8 @@ export const getPersonajesAccion = () => async (dispatch, getState) => {
   try {
     const res = await axios.get(
       `https://rickandmortyapi.com/api/character/?page=${page}`
-    );
+    )
+
     dispatch({
       type: GET_PERSONAJES_SUCCESS,
       payload: res.data.results,
@@ -83,6 +95,7 @@ export const nextPersonajesAccion = () => async (dispatch, getState) => {
     console.log(error);
   }
 };
+
 
 export const prevPersonajesAccion = () => async (dispatch, getState) => {
   const { page } = getState().personajes;
@@ -140,3 +153,15 @@ export const buscarPersonajesAccion = (name) => async (dispatch, getState) => {
       console.log(error);
     } 
   }
+  export const agregarFavoritosAccion = (personaje) => async(dispatch, getState)=>{
+
+  
+    const { page } = getState().personajes;
+      dispatch({
+        type: AGREGAR_FAVORITOS_SUCCES,
+        payload: {
+          favorito: personaje
+        },
+      });
+    } 
+  
