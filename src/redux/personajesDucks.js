@@ -10,6 +10,7 @@ const GET_PERSONAJES_SUCCESS = "GET_PERSONAJES_SUCCESS";
 const NEXT_PERSONAJES_SUCCESS = "NEXT_PERSONAJES_SUCCESS";
 const PREV_PERSONAJES_SUCCESS = "PREV_PERSONAJES_SUCCESS";
 const BUSCAR_PERSONAJES_SUCCES = "BUSCAR_PERSONAJES_SUCCESS";
+const MOSTRAR_FAVORITOS_SUCCESS ="MOSTRAR_FAVORITOS_SUCCESS"
 
 //reducer
 export default function personajesReducer(state = dataInicial, action) {
@@ -31,6 +32,12 @@ export default function personajesReducer(state = dataInicial, action) {
         page: action.payload.page,
       };
     case BUSCAR_PERSONAJES_SUCCES:
+        return{
+            ...state,
+            array:action.payload.array,
+            page:action.payload.page,
+        }
+    case MOSTRAR_FAVORITOS_SUCCESS:
         return{
             ...state,
             array:action.payload.array,
@@ -114,3 +121,22 @@ export const buscarPersonajesAccion = (name) => async (dispatch, getState) => {
       console.log(error);
     }
   };
+
+  export const mostrarFavoritosAccion = () => async(dispatch, getState)=> {
+    const { page } = getState().personajes;
+    // const {name}= getState().name;
+    
+    try {
+      const res = await axios.get(
+        `https://rickandmortyapi.com/api/character/?name=${page}`
+      );
+      dispatch({
+        type: BUSCAR_PERSONAJES_SUCCES,
+        payload: {
+          array: res.data.results,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    } 
+  }
