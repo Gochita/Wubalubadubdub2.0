@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPersonajesAccion } from "../redux/personajesDucks";
+import { getPersonajesAccion, nextPersonajesAccion, prevPersonajesAccion } from "../redux/personajesDucks";
 
 const Personajes = () => {
   const dispatch = useDispatch();
@@ -11,10 +11,12 @@ const Personajes = () => {
     <div>
       lista de personajes
       <button onClick={() => dispatch(getPersonajesAccion())}>Mostrar</button>
+      <button onClick={() => dispatch(nextPersonajesAccion())}>Sig</button>
+      <button onClick={()=> dispatch(prevPersonajesAccion())}>prev</button>
       <ul>
           {
               personajes.map(item =>(
-                  <li key={item.name}>{item.name}</li>
+                  <li key={item.id}>{item.name}</li>
               ))
           }
       </ul>
