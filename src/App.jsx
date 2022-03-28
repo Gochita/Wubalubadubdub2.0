@@ -13,7 +13,6 @@ function App() {
         <Barrita />
         <Personajes />
       </div>
-      x
     </Provider>
   );
 }
