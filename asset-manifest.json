@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/%7Bhttps://github.com/Gochita/Wubalubadubdub2.0%7D/static/css/main.de7e63f0.css",
+    "main.js": "/%7Bhttps://github.com/Gochita/Wubalubadubdub2.0%7D/static/js/main.f9d646cc.js",
+    "index.html": "/%7Bhttps://github.com/Gochita/Wubalubadubdub2.0%7D/index.html",
+    "main.de7e63f0.css.map": "/%7Bhttps://github.com/Gochita/Wubalubadubdub2.0%7D/static/css/main.de7e63f0.css.map",
+    "main.f9d646cc.js.map": "/%7Bhttps://github.com/Gochita/Wubalubadubdub2.0%7D/static/js/main.f9d646cc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de7e63f0.css",
+    "static/js/main.f9d646cc.js"
+  ]
+}
