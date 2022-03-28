@@ -96,13 +96,13 @@ export const prevPersonajesAccion = () => async (dispatch, getState) => {
   }
 };
 
-export const buscarPersonajesAccion = () => async (dispatch, getState) => {
+export const buscarPersonajesAccion = (name) => async (dispatch, getState) => {
     const { page } = getState().personajes;
-    const {name}= getState().name;
+    // const {name}= getState().name;
     
     try {
       const res = await axios.get(
-        `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}`
+        `https://rickandmortyapi.com/api/character/?name=${name}`
       );
       dispatch({
         type: BUSCAR_PERSONAJES_SUCCES,

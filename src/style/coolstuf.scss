@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-$color-fondo: #b8d5cd;
+$color-fondo: #b1cc5f;
+$color-hover: #09b1ca;
 
 .page{
     background-color: $color-fondo;
@@ -9,7 +10,44 @@ $color-fondo: #b8d5cd;
     font-size: 8px;
 
 }
+.formulario{
+    padding:1rem 0;
+    
+}
 
+
+.buscador{
+    width: 40%;
+    padding: .5rem 1.5rem;
+    font-size: 15px;
+    outline: none;
+    border:2px solid rgb(8, 8, 8);
+    border-radius: 1rem;
+    transition: .3s;
+    &:hover,&:focus{
+
+        border-color: $color-hover;
+        width: 80%;
+    }
+    
+}
+
+
+.boton{
+    padding: .5rem 1.5rem;
+    font-size: 15px;
+    outline: none;
+    border:2px solid rgb(8, 8, 8);
+    border-radius: 1rem;
+    transition: .3s;
+    margin-left: 1rem;
+    &:hover{
+        border-color: $color-hover;
+        color: $color-hover;
+
+    }
+
+}
 .opacity{
     // opacity: .6;
     background-color: rgba(0, 0, 0, .3);

@@ -4,6 +4,7 @@ import {
   getPersonajesAccion,
   nextPersonajesAccion,
   prevPersonajesAccion,
+  buscarPersonajesAccion
 } from "../redux/personajesDucks";
 
 import "../style/coolstuf.scss";
@@ -19,16 +20,19 @@ const Personajes = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(nombres);
+    dispatch(buscarPersonajesAccion(nombres));
+    
   };
   return (
     <div className="container page">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="formulario">
         <input
           type="text"
           placeholder="Ingrese nombre de personaje"
           onChange={handleChange}
+          className="buscador"
         />
-        <button type="submit">buscar</button>
+        <button type="submit" className="boton">buscar</button>
       </form>
       <button
         onClick={() => dispatch(getPersonajesAccion())}
