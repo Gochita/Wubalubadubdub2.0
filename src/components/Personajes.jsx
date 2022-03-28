@@ -14,7 +14,7 @@ const Personajes = () => {
   const personajes = useSelector((store) => store.personajes.array);
 
   return (
-    <div className="container">
+    <div className="container page">
       <button
         onClick={() => dispatch(getPersonajesAccion())}
         className="btn btn-dark"
