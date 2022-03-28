@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+$color-fondo: #b8d5cd;
+
+.page{
+    background-color: $color-fondo;
+    width: 100%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+
+}
+
+.opacity{
+    // opacity: .6;
+    background-color: rgba(0, 0, 0, .3);
+  color: #fff;
+  padding-top: 1em;
+}
+
+.card{
+    // width: 300px;
+    // height: 430px;
+    img{
+        margin-top: 30px;
+        margin-left: 30px;
+        width: 80%;
+    }
+
+    h5{
+        margin-top: 10px;
+        margin-left: 10px;
+
+    }
+    b{
+        margin-left: 10px;
+    }
+
+}
+
