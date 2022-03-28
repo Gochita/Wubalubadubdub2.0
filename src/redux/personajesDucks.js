@@ -46,12 +46,13 @@ export default function personajesReducer(state = dataInicial, action) {
             page:action.payload.page,
         }
     case AGREGAR_FAVORITOS_SUCCES:
+        console.log(action.payload.favorito)
          return{
              ...state,
-             favoritos: [state.favoritos.push(action.payload.favorito)],
+             favoritos: action.payload.favorito,
          }
        // console.log(action.payload.favorito)
-       console.log(state.favoritos)
+       //
 
         // return state.favoritos.push(action.payload.favorito)
     default:

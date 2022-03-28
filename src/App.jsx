@@ -7,9 +7,9 @@ import Barrita from "./components/Barrita";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  const store = generateStore();
+  // const store = generateStore();
   return (
-    <Provider store={store}>
+    <>
       {/* <BrowserRouter> */}
       <div className="page">
         {/* <Routes> */}
@@ -18,9 +18,10 @@ function App() {
         {/* </Routes> */}
       
         <Personajes />
+
       </div>
       {/* </BrowserRouter> */}
-    </Provider>
+    </>
   );
 }
 
