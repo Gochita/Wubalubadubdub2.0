@@ -34,6 +34,7 @@ const Personajes = () => {
         />
         <button type="submit" className="boton">buscar</button>
       </form>
+      <div className="botones">
       <button
         onClick={() => dispatch(getPersonajesAccion())}
         className="btn btn-dark"
@@ -52,6 +53,8 @@ const Personajes = () => {
       >
         ▶
       </button>
+      </div>
+      
 
       <div className="row">
         {personajes.map((item) => (

@@ -1,77 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 $color-fondo: #b1cc5f;
 $color-hover: #09b1ca;
 
-.page{
-    background-color: $color-fondo;
-    width: 100%;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 8px;
-
+.page {
+  background-color: $color-fondo;
+  width: 100%;
+  font-family: "Press Start 2P", cursive;
+  font-size: 8px;
 }
-.formulario{
-    padding:1rem 0;
-    
+.formulario {
+  padding: 1rem 0;
 }
 
-
-.buscador{
-    width: 40%;
-    padding: .5rem 1.5rem;
-    font-size: 15px;
-    outline: none;
-    border:2px solid rgb(8, 8, 8);
-    border-radius: 1rem;
-    transition: .3s;
-    &:hover,&:focus{
-
-        border-color: $color-hover;
-        width: 80%;
-    }
-    
+.buscador {
+  width: 40%;
+  padding: 0.5rem 1.5rem;
+  font-size: 15px;
+  outline: none;
+  border: 2px solid rgb(8, 8, 8);
+  border-radius: 1rem;
+  transition: 0.3s;
+  &:hover,
+  &:focus {
+    border-color: $color-hover;
+    width: 80%;
+  }
 }
 
-
-.boton{
-    padding: .5rem 1.5rem;
-    font-size: 15px;
-    outline: none;
-    border:2px solid rgb(8, 8, 8);
-    border-radius: 1rem;
-    transition: .3s;
-    margin-left: 1rem;
-    &:hover{
-        border-color: $color-hover;
-        color: $color-hover;
-
-    }
-
+.boton {
+  padding: 0.5rem 1.5rem;
+  font-size: 15px;
+  outline: none;
+  border: 2px solid rgb(8, 8, 8);
+  border-radius: 1rem;
+  transition: 0.3s;
+  margin-left: 1rem;
+  &:hover {
+    border-color: $color-hover;
+    color: $color-hover;
+  }
 }
-.opacity{
-    // opacity: .6;
-    background-color: rgba(0, 0, 0, .3);
+
+.botones {
+  display: flex;
+  column-gap: .5rem;
+  padding-bottom: .5rem;
+}
+.opacity {
+  // opacity: .6;
+  background-color: rgba(0, 0, 0, 0.3);
   color: #fff;
   padding-top: 1em;
 }
 
-.card{
-    // width: 300px;
-    // height: 430px;
-    img{
-        margin-top: 30px;
-        margin-left: 30px;
-        width: 80%;
-    }
+.card {
+  // width: 300px;
+  // height: 430px;
+  img {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 80%;
+  }
 
-    h5{
-        margin-top: 10px;
-        margin-left: 10px;
-
-    }
-    b{
-        margin-left: 10px;
-    }
-
+  h5 {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  b {
+    margin-left: 10px;
+  }
 }
-
